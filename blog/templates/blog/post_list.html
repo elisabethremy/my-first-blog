@@ -3,12 +3,16 @@
 		<title>Le Blog de Zaza</title>
 	</head>
 	<body>
-		<h1>Le blog de Zaza</h1>
-		<h2><a href="">Mon premier post</a></h2>
-		<p>J'aime bien manger des brownies. C'est bon les brownies.</p>
-		<p>published: 30.04.2016, 16:37</p>
-		<h2><a href="">Mon second post</a></h2>
-		<p>Les crêpes beurre-sucre aussi c'est <em>vraiment bon</em>.</p>
-		<p>published: 30.04.2016, 16:38</p>
+		<div>
+    		<h1><a href="/">Le Blog de Zaza</a></h1>
+		</div>
+
+		{% for post in posts %}
+    		<div>
+        		<p>publié: {{ post.published_date }}</p>
+        		<h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaks }}</p>
+    		</div>
+		{% endfor %}
 	</body>
 </html>
